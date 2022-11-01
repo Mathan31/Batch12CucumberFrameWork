@@ -49,6 +49,20 @@ private By submitButton = By.id("gh-btn");
 		WebElement oSubmit;
 		oSubmit = driver.findElement(submitButton);
 		oSubmit.submit();
+	} 
+	
+	public void validateSearchResult() {
+		WebElement oResult;
+		oResult = driver.findElement(By.xpath("(//h1[@class='srp-controls__count-heading']/span)[1]"));
+		String resultString = oResult.getText();// 410,000
+		String replacedString = resultString.replaceAll("[^0-9]", "");// 410000
+		int resultInt = Integer.parseInt(replacedString);
+		System.out.println("Total Search Result is : " + resultInt);
+		if (resultInt > 0) {
+			System.out.println("Search Result is found!!!");
+		} else {
+			System.out.println("Search Result is not found!!!");
+		}
 	}
 
 }

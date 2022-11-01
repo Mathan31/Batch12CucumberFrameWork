@@ -11,7 +11,7 @@ public class BrowserBase {
 	public int iBrowserType = 1 ;
 
 	
-	public WebDriver invokeChrome() {
+	public WebDriver invokeBrowser() {
 		if(driver == null) {
 		switch (iBrowserType) {
 		case 1:

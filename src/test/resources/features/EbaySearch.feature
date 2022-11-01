@@ -11,7 +11,7 @@ Feature: Validate Ebay Search Result
     When Valiate user landed to the Ebay Home Page
     And User can enter search text as "Selenium" and selected catagory as "Books" and click on submit button
     Then Validate the search result
-    And Close the browser
+    #And Close the browser
 
   #
   @Regression @Fix123

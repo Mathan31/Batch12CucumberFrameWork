@@ -21,8 +21,6 @@ public class AmazonPages {
 	}
 	
 	public void navigateToAmazon() {
-		driver.manage().window().maximize(); // To maximize the browser
-		driver.manage().deleteAllCookies();
 		driver.navigate().to(sURL);
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // Wait until page loads
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30)); // Wait until element loaded in DOM .
@@ -47,5 +45,11 @@ public class AmazonPages {
 		oButton.click();
 	}
 	
+	public void getSearchResult() {
+		WebElement oResult;
+		oResult = driver.findElement(By.xpath("(//div[@class='a-section a-spacing-small a-spacing-top-small']/span)[1]"));
+		String sResult = oResult.getText(); //530,000
+	    System.out.println("Result is : "+sResult);
+	}
 
 }
